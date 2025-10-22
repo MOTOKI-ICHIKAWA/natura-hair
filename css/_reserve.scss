@@ -1,0 +1,86 @@
+@use 'mixin' as m;
+
+.reserve {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    margin-top: 160px;
+
+    @include m.sp {
+        margin-top: 120px;
+    }
+
+    &-img {
+        height: 600px;
+        width: 100%;
+        background-size: cover;
+        background-image: url("../img/reserve img.png");
+
+        @include m.pc {
+            height: 500px;
+        }
+    }
+
+    &-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 520px;
+        height: 350px;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 auto;
+
+        @include m.pc {
+            max-width: 400px;
+        }
+
+        @include m.sp {
+            width: 100%;
+        }
+
+        &-contents {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+
+            @include m.sp {
+                padding-inline: 2%;
+            }
+
+            p {
+                width: 100%;
+                margin-block: 8px;
+            }
+
+            .tel,
+            .app,
+            .contact {
+                width: 250px;
+                height: 50px;
+                background-color: #374437;
+                line-height: 50px;
+                margin: 16px auto;
+
+                a {
+                    color: white;
+                    width: 100%;
+                    transition: 0.4s;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.5);
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+}

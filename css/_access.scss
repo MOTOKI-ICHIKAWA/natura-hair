@@ -1,0 +1,64 @@
+@use 'mixin' as m;
+
+.access {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    margin-block: 160px;
+
+    @include m.sp {
+        margin-top: 120px;
+    }
+
+    &-container {
+        display: flex;
+
+        @include m.pc {
+            flex-direction: column;
+        }
+
+        .map {
+            width: 58%;
+
+            @include m.pc {
+                width: 100%;
+            }
+
+            iframe {
+                width: 100%;
+            }
+        }
+
+        .address {
+            width: 42%;
+            padding-left: 50px;
+
+            @include m.pc {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 30px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// accesspageのcss
+.access-mainvisual {
+    .access-mainvisual-img {
+        img {
+            height: 40vh;
+            object-fit: cover;
+            width: 100%;
+            margin-top: 80px;
+        }
+    }
+}
+
+.access-page {
+    margin-block: 80px;
+
+}

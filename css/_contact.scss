@@ -1,0 +1,132 @@
+@use 'mixin' as m;
+
+.contact-page-container {
+    padding-top: 152px;
+    padding-bottom: 200px;
+
+    @include m.pc {
+        padding-bottom: 100px;
+    }
+
+    .section-title {
+        margin-bottom: 16px;
+    }
+
+    form {
+        max-width: 800px;
+        margin-top: 24px;
+        margin-inline: auto;
+
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+
+            @include m.pc {
+                display: block;
+            }
+
+            dt {
+                width: 25%;
+                font-size: 14px;
+
+                @include m.pc {
+                    width: 100%;
+                    margin-bottom: 8px;
+                }
+            }
+
+            dd {
+                width: 70%;
+                margin-bottom: 8px;
+
+                @include m.pc {
+                    width: 100%;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    border: solid 1px #c8c8c8;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .contact-submit {
+            width: 180px;
+            /* 横幅指定 */
+            background-color: #ffffff;
+            /* 背景色 */
+            color: #000000;
+            /* 文字色 */
+            font-weight: bold;
+            /* 文字の太さ */
+            display: block;
+            /* インライン要素をブロック要素に変更 */
+            margin: 40px auto;
+            /* 中央寄せ */
+            font-size: 16px;
+            /* 文字の大きさ */
+            padding: 15px;
+            /* 内側の余白 */
+            border-radius: 100vh;
+            /* 角丸指定 */
+            border: 1px solid #000000;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.3;
+                transition-duration: 0.2s;
+            }
+        }
+    }
+}
+
+.contact-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    padding-top: 10px;
+
+    @include m.pc {
+        position: initial;
+        height: 300px;
+    }
+
+    .wrapper {
+        text-align: initial;
+
+        @include m.pc {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-nav {
+            margin-top: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            @include m.pc {
+                position: initial;
+                transform: unset;
+            }
+        }
+
+        .copylight {
+            margin-top: 40px;
+
+            @include m.pc {
+                margin-top: 0;
+            }
+        }
+
+    }
+
+}
